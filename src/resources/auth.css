@@ -1,0 +1,138 @@
+/* Background container for auth pages */
+.auth-container {
+  background-image: url('https://images.unsplash.com/photo-1584936684506-c3a7086e8212?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1694&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Optional frosted glass effect */
+.auth-form-container {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 50px 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  width: 420px;
+  max-width: 90%;
+  animation: fadeInUp 1s ease;
+  transition: transform 0.3s ease-in-out;
+}
+
+.auth-form-container:hover {
+  transform: translateY(-5px);
+}
+
+/* Form style */
+.auth-form {
+  width: 100%;
+}
+
+.auth-form .form-title {
+  font-size: 30px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.auth-form hr {
+  border-color: #eaeaea;
+  margin: 15px 0;
+}
+
+.auth-form .ant-form-item {
+  margin-bottom: 18px;
+}
+
+/* Premium 3D Button Style */
+.btn-register {
+  background: linear-gradient(145deg, #6a5acd, #7b68ee);
+  color: #fff;
+  border: none;
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(106, 90, 205, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.btn-register:hover {
+  background: linear-gradient(145deg, #5a4fcf, #6a5acd);
+  box-shadow: 0 10px 18px rgba(106, 90, 205, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Text links */
+.auth-form a {
+  color: slateblue;
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  transition: color 0.3s ease-in-out;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.auth-form a:hover {
+  color: #5a4fcf;
+}
+
+/* Logo styling (optional if using logo text) */
+.login-logo {
+  position: absolute;
+  top: 30px;
+  left: 50px;
+  color: white;
+  font-size: 48px;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+/* Optional full-width background image element */
+.auth-container img.w-100 {
+  object-fit: cover;
+  height: 100vh;
+  width: 100%;
+}
+
+/* Loader overlay */
+.simple-loader {
+  position: fixed;
+  z-index: 9999;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(3px);
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Smooth fade-in animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

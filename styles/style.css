@@ -1,0 +1,64 @@
+/* style.css or auth.css */
+
+/* Header section */
+.header {
+    background-image: url('https://i.postimg.cc/RVQKyC0C/photo-1614288532696-203f89dc0db4.jpg'); /* Set the image */
+    background-size: cover;
+    background-position: center;
+    padding: 30px 0;
+    position: relative;
+    color: white;
+  }
+  
+  .header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header-logo {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .header a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .header .ant-btn {
+    background-color: rgba(0, 0, 0, 0.5); /* Dark background for buttons */
+    color: white;
+    border: none;
+    font-size: 16px;
+  }
+  
+  .header .ant-btn:hover {
+    background-color: #ffa500; /* Orange color on hover */
+  }
+  
+  .ant-dropdown-menu-item a {
+    color: #333;
+  }
+  
+  .ant-dropdown-menu-item:hover a {
+    color: #ffa500;
+  }
+  
+  .ant-dropdown {
+    margin-right: 20px;
+  }
+  
+  .header .ant-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+  
