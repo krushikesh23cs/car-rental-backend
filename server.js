@@ -5,11 +5,11 @@ const cors = require('cors');
 const bcrypt = require('bcryptjs');
 
 const connectDB = require('./db');                   // MongoDB connection
-const userModel = require('./models/userModel');       // User model
-const Form = require('./models/Form');                 // Form model
+const userModel = require('./models/userModel');     // User model
+const Form = require('./models/Form');               // Form model
 const Subscription = require('./models/Subscription'); // Subscription model
 
-dotenv.config(); // Load .env variables
+dotenv.config(); // Load environment variables
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -21,7 +21,7 @@ app.use(cors());
 // Connect to MongoDB
 connectDB();
 
-// ---------- User Registration Route ----------
+// ---------- User Registration ----------
 app.post('/api/register', async (req, res) => {
   const { username, password } = req.body;
   if (!username || !password)
@@ -30,8 +30,7 @@ app.post('/api/register', async (req, res) => {
     const userExists = await userModel.findOne({ username });
     if (userExists)
       return res.status(400).json({ error: 'User already exists.' });
-    
-    // The password is hashed in the pre-save hook
+
     const newUser = new userModel({ username, password });
     await newUser.save();
     res.status(201).json({ message: 'User registered successfully!' });
@@ -41,7 +40,7 @@ app.post('/api/register', async (req, res) => {
   }
 });
 
-// ---------- User Login Route ----------
+// ---------- User Login ----------
 app.post('/api/login', async (req, res) => {
   const { username, password } = req.body;
   if (!username || !password)
@@ -50,11 +49,11 @@ app.post('/api/login', async (req, res) => {
     const user = await userModel.findOne({ username });
     if (!user)
       return res.status(400).json({ error: 'Invalid credentials' });
-    
+
     const isMatch = await user.matchPassword(password);
     if (!isMatch)
       return res.status(400).json({ error: 'Invalid credentials' });
-    
+
     res.status(200).json({ message: 'Login successful!' });
   } catch (error) {
     console.error('Error logging in:', error);
@@ -62,13 +61,13 @@ app.post('/api/login', async (req, res) => {
   }
 });
 
-// ---------- Form Submission Route ----------
+// ---------- Form Submission ----------
 app.post('/api/form', async (req, res) => {
   try {
     const { fullName, email, phoneNumber, address, delivery } = req.body;
     if (!fullName || !email || !phoneNumber || !address)
       return res.status(400).json({ error: 'All fields are required.' });
-    
+
     const newForm = new Form({ fullName, email, phoneNumber, address, delivery });
     await newForm.save();
     res.status(201).json({
@@ -82,7 +81,7 @@ app.post('/api/form', async (req, res) => {
   }
 });
 
-// ---------- Subscription Route ----------
+// ---------- Subscription ----------
 app.post('/api/subscribe', async (req, res) => {
   const { email } = req.body;
   if (!email || !/\S+@\S+\.\S+/.test(email))
@@ -94,13 +93,13 @@ app.post('/api/subscribe', async (req, res) => {
   } catch (error) {
     if (error.code === 11000)
       return res.status(409).json({ error: 'This email is already subscribed.' });
-    
+
     console.error('Error saving subscription:', error);
     res.status(500).json({ error: 'Failed to subscribe. Please try again.' });
   }
 });
 
-// ---------- Start the Server ----------
+// ---------- Start Server ----------
 app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+  console.log(`🚀 Server is running at http://localhost:${port}`);
 });
