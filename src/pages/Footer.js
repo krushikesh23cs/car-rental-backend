@@ -154,7 +154,7 @@ const Footer = ({ scrollToThreeSteps }) => {
           <a href="/suppliers" style={styles.link}>
             Suppliers
           </a>
-          <a href="/locations" style={styles.link}>
+          <a href="https://www.google.co.in/maps" style={styles.link}>
             Locations
           </a>
         </div>

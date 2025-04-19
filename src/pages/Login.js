@@ -1,4 +1,3 @@
-// src/pages/Login.js
 import React, { useState } from 'react';
 import { Form, Input, Spin, message } from 'antd';
 import { Link, useNavigate } from 'react-router-dom';
@@ -16,8 +15,8 @@ function Login() {
   const onFinish = async (values) => {
     setLoading(true);
     try {
-      // Using backend endpoint /api/login (adjust if needed)
-      const response = await axios.post("/api/login", values);
+      // Use full backend URL here if needed
+      const response = await axios.post("https://car-rental-backend-oscp.onrender.com/api/login", values);
       localStorage.setItem("user", JSON.stringify(response.data));
       message.success("Login successful!");
 
@@ -51,7 +50,7 @@ function Login() {
           <Form.Item name="password" label="Password" rules={[{ required: true, message: 'Password is required' }]}>
             <Input.Password placeholder="Enter your password" />
           </Form.Item>
-          <button className="btn-register mt-2">Login</button>
+          <button type="submit" className="btn-register mt-2">Login</button>
           <hr />
           <Link to="/register">Click Here to Register</Link>
         </Form>

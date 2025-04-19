@@ -53,12 +53,12 @@ function Home() {
 
   const styles = {
     header: {
-      background: 'linear-gradient(90deg, #0f2027, #203a43, #2c5364)', // Gradient for a luxurious look
+      background: 'linear-gradient(90deg,rgb(0, 0, 0),rgb(86, 90, 91),rgb(75, 81, 83))', // Gradient for a luxurious look
       padding: '15px 60px',
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
-      boxShadow: '0 6px 20px rgba(0, 0, 0, 0.4)',
+      boxShadow: '0 6px 20px rgba(216, 206, 206, 0.4)',
       position: 'sticky',
       top: 0,
       zIndex: 1000,
@@ -67,29 +67,29 @@ function Home() {
       height: '83px',
       marginRight: '45px',
       borderRadius: '100px', // Removed external white background
-      boxShadow: '0 0 10px rgba(255, 255, 255, 0.5)', // Subtle glow around the logo
+      boxShadow: '0 0 10px rgba(255, 244, 244, 0.5)', // Subtle glow around the logo
     },
     navButton: {
       color: '#ffffff', // White text for contrast
       fontWeight: '900',
-      fontSize: '18px',
-      padding: '12px 25px',
-      margin: '0 8px',
+      fontSize: '20px',
+      padding: '18px 25px',
+      margin: '1 18px',
       background: 'transparent',
       border: '2px solid transparent',
       borderRadius: '30px',
       cursor: 'pointer',
       transition: 'all 0.4s ease',
-      textTransform: 'uppercase', // For a professional look
+     // For a professional look
     },
     navButtonHover: {
       borderColor: '#ffffff', // White border on hover
       backgroundColor: '#1f4037', // Dark green for hover effect
-      boxShadow: '0 0 15px #1f4037', // Glow effect on hover
+      boxShadow: '0 0 15pxrgb(161, 182, 177)', // Glow effect on hover
     },
     appButton: {
-      background: 'linear-gradient(135deg, #ff9a9e, #fad0c4)', // Gradient for a premium look
-      color: '#fff',
+      background: 'linear-gradient(135deg,rgb(206, 194, 194),rgb(241, 234, 232))', // Gradient for a premium look
+      color: '135deg,rgb(4, 4, 4)',
       fontWeight: 'bold',
       fontSize: '18px',
       padding: '12px 25px',
@@ -110,15 +110,15 @@ function Home() {
       borderRadius: '30px',
       cursor: 'pointer',
       transition: 'all 0.4s ease',
-      textTransform: 'uppercase',
+      
     },
     loginButtonHover: {
       borderColor: '#ffffff', // White border on hover
       backgroundColor: '#1f4037', // Dark green for hover effect
-      boxShadow: '0 0 15px #1f4037', // Glow effect on hover
+      boxShadow: '0 0 15pxrgb(11, 18, 16)', // Glow effect on hover
     },
     mainContent: {
-      backgroundImage: 'url("https://i.postimg.cc/vH5T59y0/Rental-Car-Industry-3127x1344.jpg")',
+      backgroundImage: 'url("https://i.postimg.cc/qvThJztz/wp7034680.webp")',
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'center',
@@ -305,7 +305,7 @@ function Home() {
                 onMouseLeave={(e) => Object.assign(e.target.style, styles.loginButton)}
                 onClick={() => navigate('/login')}
               >
-                Login/Signup
+                Sign in/up
               </button>
             </Col>
           </Row>
@@ -316,8 +316,8 @@ function Home() {
       <div style={styles.mainContent}>
         <Row justify="center" align="middle" gutter={32} style={{ marginTop: '50px' }}>
           <Col lg={10} sm={24} xs={24} style={{ textAlign: 'center', marginBottom: '50px' }}>
-            <img
-              src="https://i.postimg.cc/4xpDL3q4/banner-content-2.png"
+          <img
+              src="https://i.postimg.cc/fb6njhj0/banner-content-2.png"
               alt="Banner Content"
               style={{ maxWidth: '90%', height: '35s0px' }}
             />

@@ -1,4 +1,3 @@
-// src/pages/Register.js
 import React, { useState } from 'react';
 import { Form, Input, Spin, message } from 'antd';
 import { Link, useNavigate } from 'react-router-dom';
@@ -17,8 +16,8 @@ function Register() {
     
     setLoading(true);
     try {
-      // Using backend endpoint /api/register (adjust if needed)
-      await axios.post("/api/register", {
+      // Use full backend URL for registration endpoint
+      await axios.post("https://car-rental-backend-oscp.onrender.com/api/register", {
         username: values.username,
         password: values.password,
       });
@@ -57,7 +56,7 @@ function Register() {
           <Form.Item name="cpassword" label="Confirm Password" rules={[{ required: true, message: 'Please confirm your password' }]}>
             <Input.Password placeholder="Re-enter your password" />
           </Form.Item>
-          <button className="btn-register mt-2 mb-3">Register</button>
+          <button type="submit" className="btn-register mt-2 mb-3">Register</button>
           <Link to="/login">Already registered? Login here</Link>
         </Form>
       </div>
