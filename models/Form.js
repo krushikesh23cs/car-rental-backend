@@ -1,4 +1,3 @@
-// models/Form.js
 const mongoose = require("mongoose");
 
 const formSchema = new mongoose.Schema({
@@ -6,7 +5,7 @@ const formSchema = new mongoose.Schema({
   email: { type: String, required: true },
   phoneNumber: { type: String, required: true },
   address: { type: String, required: true },
-  delivery: { type: String }, // Adjust to Boolean if needed
+  delivery: { type: String },
 });
 
 const Form = mongoose.model("Form", formSchema);

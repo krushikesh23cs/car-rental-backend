@@ -1,4 +1,3 @@
-// models/userModel.js
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 
@@ -7,8 +6,7 @@ const userSchema = new mongoose.Schema({
   password: { type: String, required: true },
 });
 
-// Pre-save hook to hash the password
-userSchema.pre('save', async function(next) {
+userSchema.pre('save', async function (next) {
   if (!this.isModified('password')) return next();
   try {
     const salt = await bcrypt.genSalt(10);
@@ -19,8 +17,7 @@ userSchema.pre('save', async function(next) {
   }
 });
 
-// Method to compare password for login
-userSchema.methods.matchPassword = async function(enteredPassword) {
+userSchema.methods.matchPassword = async function (enteredPassword) {
   return await bcrypt.compare(enteredPassword, this.password);
 };
 
